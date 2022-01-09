@@ -27,7 +27,7 @@
     transition: max-height 0.2s ease-out;
 }
 
-.project-content img {
+.image {
 max-width: 55%;
 height: auto;
 /* margin-left: 15%;

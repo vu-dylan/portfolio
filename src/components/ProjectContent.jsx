@@ -56,7 +56,7 @@ const ProjectContent = (props) => {
                 //console.log(paragraph);
                 if (checkIfphoto(paragraph)) {
                     //console.log("Hi there");
-                    return <img key={paragraph} src={paragraph} alt={paragraph} />
+                    return <img className={styles.image} key={paragraph} src={paragraph} alt={paragraph} />
                 } else if (CheckIfLink(paragraph)) {
                     return <p key={paragraph} className={styles.text}><a className={styles["collapsible-link"]} href={paragraph} target="_blank" rel="noreferrer">{paragraph}</a></p>
                 } else {
