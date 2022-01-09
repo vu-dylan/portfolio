@@ -1,4 +1,5 @@
-import { React, useEffect, useState } from 'react'
+import { React, useEffect, useState } from 'react';
+import styles from '../styles/ProjectContent.module.css';
 
 /* Props:
 title = title of the project
@@ -48,23 +49,23 @@ const ProjectContent = (props) => {
     }
 
     return (
-        <div className="project-content">
+        <div className={styles["project-content"]}>
             <h4 style={{ color: `${props.color}` }}> {props.hook}: </h4>
             <h3 style={{ color: `${props.color}` }}> {props.title} </h3>
             {paragraphs.map((paragraph) => {
                 //console.log(paragraph);
                 if (checkIfphoto(paragraph)) {
                     //console.log("Hi there");
-                    return <img key={paragraph} src={process.env.PUBLIC_URL + paragraph} alt={paragraph} />
+                    return <img key={paragraph} src={paragraph} alt={paragraph} />
                 } else if (CheckIfLink(paragraph)) {
-                    return <p key={paragraph} className="text"><a className="collapsible-link" href={paragraph} target="_blank" rel="noreferrer">{paragraph}</a></p>
+                    return <p key={paragraph} className={styles.text}><a className={styles["collapsible-link"]} href={paragraph} target="_blank" rel="noreferrer">{paragraph}</a></p>
                 } else {
                     if (paragraph[0] === "*") {
                         return <ul>
                             <li key={paragraph}>{paragraph.slice(2)}</li>
                         </ul>
                     }
-                    return <p className="text" key={paragraph + Math.floor(Math.random() * 500 * Math.floor(Math.random() * 500)).toString()}>{paragraph}</p>
+                    return <p className={styles.text} key={paragraph + Math.floor(Math.random() * 500 * Math.floor(Math.random() * 500)).toString()}>{paragraph}</p>
                 }
 
             }

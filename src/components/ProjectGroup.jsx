@@ -1,5 +1,6 @@
 import React from 'react'
 import ProjectContent from './ProjectContent'
+import styles from '../styles/ProjectGroup.module.css'
 
 /* Props
 color = string hex color of the project groups
@@ -14,8 +15,8 @@ projects = array of project objects with the following attributes:
 
 const ProjectGroup = (props) => {
     return (
-        <div className="ProjectGroup">
-            <button type="button" className="project-group-title" id={props.scroll} style={{borderColor : `${props.color}`}}>{props.group}</button>
+        <div className={styles.ProjectGroup}>
+            <button type="button" className={styles["project-group-title"]} id={props.scroll} style={{borderColor : `${props.color}`}}>{props.group}</button>
             <br/>
             <br/>
             {props.projects.map((project) => (

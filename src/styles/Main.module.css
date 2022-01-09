@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+
+.content {
+    position: relative;
+    top: 0;
+    left: 0;
+    /* font-size: 20px; */
+    background-color: #f2f2f2;
+    font-family: 'Oxygen', sans-serif;
+    z-index: 1;
+    /* margin-left: 295px; */
+}

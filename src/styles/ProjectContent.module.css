@@ -1,0 +1,52 @@
+/* CSS For ProjectContent */
+.projectContent h1 {
+    font-size: 40px;
+    text-align: center;
+    border-top: 5px solid currentColor;
+    padding-top: 25px;
+}
+
+.text {
+    text-align: left;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
+    font-size: 1.1em;
+}
+
+.projectImage {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.project-content {
+    padding: 0 18px;
+    font-size: 1.2rem;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.project-content img {
+max-width: 55%;
+height: auto;
+/* margin-left: 15%;
+margin-right: 15%; */
+margin-left: auto;
+margin-right: auto;
+display: block;
+border-radius: 1.5rem;
+}
+
+.project-content h4 {
+font-size: 1.25em;
+}
+
+.project-content h3 {
+font-size: 2.5em;
+}
+
+.collapsible-link {
+    color: #36393f;
+    word-wrap: break-word;
+}

@@ -1,7 +1,8 @@
 import {React, useState, useEffect} from 'react';
 import Axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import styles from '../styles/Contributions.module.css';
 
 const Contributions = () => {
 
@@ -125,9 +126,9 @@ const Contributions = () => {
     }, [index]);
 
     return (
-        <div className="contribution">
+        <div className={styles.contribution}>
             {contribution === "" ? 
-            <div>Thanks for stopping by! Come learn more about me and my projects!</div> :
+            <div>Thanks for stopping by! Come learn more about my projects and I!</div> :
             <div>
             The last thing I've worked on was <span><a href={repoLink} target="_blank" rel="noreferrer">{contribution}</a></span>! Check it out!
             </div>}
@@ -148,7 +149,7 @@ const Contributions = () => {
                         <FontAwesomeIcon
                             icon={faGithub}
                             id="github"
-                            className="githubIcon"
+                            className={styles.githubIcon}
                         />
                     </a>
                 </div>

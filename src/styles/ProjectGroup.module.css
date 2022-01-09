@@ -1,0 +1,34 @@
+/* CSS for Project Group */
+
+.ProjectGroup {
+    padding-top: 1rem;
+}
+
+.projectGroup h1 {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* <--------------- Collapsibles ------------------> */
+
+/* Style the project title */
+
+.project-group-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    border-bottom: 4px solid;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
+    outline: none;
+    font-size: 3.5rem;
+    color: #36393f;
+    background-color: inherit;
+
+    /* Scroll offset for navbar */
+    scroll-margin-top: 3rem;
+    scroll-snap-margin-top: 5rem;
+}
