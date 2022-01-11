@@ -168,30 +168,9 @@
     justify-content: space-between;
     }
 
-    .project-group-title {
-    width: 70%;
-    font-size: 2.8rem;
-    }
-
-    .project-content img {
-    max-width: 90%;
-    }
-
     .icon {
     margin-right: 0;
     margin-left: 0;
-    }
-
-    .project-content h4 {
-    font-size: 1.1em;
-    }
-    
-    .project-content h3 {
-    font-size: 1.9em;
-    }
-
-    .text {
-    font-size: 0.9rem;
     }
 
     .contribution {
@@ -213,10 +192,6 @@
     .navbar.is-responsive a {
     display: flex;
     width:auto;
-    }
-
-    .logo {
-    width: 3.5rem;
     }
 }
 
@@ -243,10 +218,6 @@
 
     .navbar a, .navbar .name {
     font-size: 1.35rem;
-    }
-
-    .icon {
-    font-size: 3rem;
     }
 
 }

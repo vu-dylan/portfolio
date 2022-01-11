@@ -10,8 +10,6 @@
     text-decoration: underline;
 }
 
-/* <--------------- Collapsibles ------------------> */
-
 /* Style the project title */
 
 .project-group-title {
@@ -33,51 +31,42 @@
     scroll-snap-margin-top: 5rem;
 }
 
-/* Navbar Scrolling offset on click */
+/* <---------- General Mobile Rules ------------------> */
 
-@media screen and (max-height: 340px) {
-    /* For iPhone 5 landscape */
-
-    /* Scrolling offset small mobile landscape */
+@media screen and (max-width: 1023px) {
     .project-group-title {
-    scroll-margin-top: 8rem;
-    scroll-snap-margin-top: 8rem;
+        width: 70%;
+        font-size: 2.8rem;
     }
 }
 
-@media screen and (max-height: 375px) and (min-height: 341px) {
 
-    /* Scrolling offset most mobile landscape, from iPhone 6 to iPhone X */
+/* <-----------  Navbar Scrolling offset on click -------------> */
+
+/* Portrait modes */
+
+/* Everything smaller than an iPhone 6 */
+@media screen and (max-width: 374px) and (max-height: 666px) {
     .project-group-title {
-    scroll-margin-top: 9rem;
-    scroll-snap-margin-top: 9rem;
+        scroll-margin-top: 5em;
+        scroll-snap-margin-top: 5em;
     }
 }
 
-@media screen and (max-height: 569px) and (min-height: 376px) {
-    /* Scrolling offset small mobile specific */
+/* Everything at an iPhone 6 but smaller than an iPad Pro */
+@media screen and (max-height: 1365px) and (max-width: 1023px) and (min-width: 375px) and (min-height: 667px) {
     .project-group-title {
-        scroll-margin-top: 11rem;
-        scroll-snap-margin-top: 11rem;
+        scroll-margin-top: 11em;
+        scroll-snap-margin-top: 11em;
     }
 }
 
-@media screen and (max-width: 1024px) and (min-height: 570px) {
-    /* This is large mobile device portrait mode */
-    /* Scrolling offset large mobile specific */
-    .project-group-title {
-        scroll-margin-top: 23rem;
-        scroll-snap-margin-top: 23rem;
-    }
-}
+/* Landscape mode */
 
-@media screen and (max-width: 1024px) and (min-height: 570px) {
-    /* This is large mobile device landscape mode and also iPhone X portrait */
-    
-    /* Tall enough orientations to accomodate for a "row by row" nav bar */
-
+/* Everything smaller than an iPad landscape but equal to or larger than an iPhone 5 landscape */
+@media screen and (max-width: 1025px) and (max-height: 768px) and (min-width: 567px) and (min-height: 319px) {
     .project-group-title {
-        scroll-margin-top: 34rem;
-        scroll-snap-margin-top: 34rem;
+        scroll-margin-top: 2.5em;
+        scroll-snap-margin-top: 2.5em;
     }
 }
