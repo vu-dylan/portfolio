@@ -127,28 +127,84 @@
     transform: translateY(-12px) rotate(-45deg);
 }
 
+/* <--------------- mobile most of hamburger/general rules ----------------> */
+
+@media screen and (max-width: 1023px) {
+
+    /* When the screen is at maximum 1024px px in size, hide all the navbar links */
+
+    .navbar {
+    flex-wrap: wrap;
+    }
+    
+    .hamburger {
+    padding: 10px;
+    /* padding-bottom: 14px; */
+    }
+
+    .logo-nav {
+    width: 50px;
+    }
+
+    .hamburger .line {
+    display: block;
+    }
+
+    .navbar a {
+    transition: height 0.5s;
+    }
+
+    .navbar.inactive a:not(:first-child) {
+    display: none;
+    }
+
+    /* Once the hamburger menu is clicked, is-responsive is added to the navbar and all the links are shown */
+
+    .navbar.is-responsive {
+    justify-content: flex-start;
+    }
+
+    .navbar {
+    justify-content: space-between;
+    }
+
+    .project-group-title {
+    width: 70%;
+    font-size: 2.8rem;
+    }
+
+    .project-content img {
+    max-width: 90%;
+    }
+
+    .icon {
+    margin-right: 0;
+    margin-left: 0;
+    }
+
+    .project-content h4 {
+    font-size: 1.1em;
+    }
+    
+    .project-content h3 {
+    font-size: 1.9em;
+    }
+
+    .text {
+    font-size: 0.9rem;
+    }
+
+    .contribution {
+    font-size: 1.1em;
+    }
+
+}
+
+
+
 /* <--------------- mobile, device specific ----------------> */
 
 /* Fixing navbar orientation for smaller devices */
-
-@media screen and (max-height: 340px) {
-    /* For iPhone 5 landscape */
-
-    /* Scrolling offset small mobile landscape */
-    .project-group-title {
-    scroll-margin-top: 8rem;
-    scroll-snap-margin-top: 8rem;
-    }
-}
-
-@media screen and (max-height: 375px) and (min-height: 341px) {
-
-    /* Scrolling offset most mobile landscape, from iPhone 6 to iPhone X */
-    .project-group-title {
-    scroll-margin-top: 9rem;
-    scroll-snap-margin-top: 9rem;
-    }
-}
 
 @media screen and (max-height: 569px) and (min-height: 376px) {
     /* For small, short mobile devices like iPhone 5 in portrait mode, iPhone 6 in landscape*/
@@ -157,12 +213,6 @@
     .navbar.is-responsive a {
     display: flex;
     width:auto;
-    }
-
-    /* Scrolling offset small mobile specific */
-    .project-group-title {
-    scroll-margin-top: 11rem;
-    scroll-snap-margin-top: 11rem;
     }
 
     .logo {
@@ -179,12 +229,6 @@
     display: flex;
     width: 100%;
     }
-
-    /* Scrolling offset large mobile specific */
-    .project-group-title {
-    scroll-margin-top: 23rem;
-    scroll-snap-margin-top: 23rem;
-    }
 }
 
 @media screen and (max-width: 1024px) and (min-height: 570px) {
@@ -195,11 +239,6 @@
     .navbar.is-responsive a{
     display: flex;
     width: 100%;
-    }
-
-    .project-group-title {
-    scroll-margin-top: 34rem;
-    scroll-snap-margin-top: 34rem;
     }
 
     .navbar a, .navbar .name {

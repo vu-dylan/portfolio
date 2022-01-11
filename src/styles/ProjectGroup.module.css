@@ -32,3 +32,52 @@
     scroll-margin-top: 3rem;
     scroll-snap-margin-top: 5rem;
 }
+
+/* Navbar Scrolling offset on click */
+
+@media screen and (max-height: 340px) {
+    /* For iPhone 5 landscape */
+
+    /* Scrolling offset small mobile landscape */
+    .project-group-title {
+    scroll-margin-top: 8rem;
+    scroll-snap-margin-top: 8rem;
+    }
+}
+
+@media screen and (max-height: 375px) and (min-height: 341px) {
+
+    /* Scrolling offset most mobile landscape, from iPhone 6 to iPhone X */
+    .project-group-title {
+    scroll-margin-top: 9rem;
+    scroll-snap-margin-top: 9rem;
+    }
+}
+
+@media screen and (max-height: 569px) and (min-height: 376px) {
+    /* Scrolling offset small mobile specific */
+    .project-group-title {
+        scroll-margin-top: 11rem;
+        scroll-snap-margin-top: 11rem;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-height: 570px) {
+    /* This is large mobile device portrait mode */
+    /* Scrolling offset large mobile specific */
+    .project-group-title {
+        scroll-margin-top: 23rem;
+        scroll-snap-margin-top: 23rem;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-height: 570px) {
+    /* This is large mobile device landscape mode and also iPhone X portrait */
+    
+    /* Tall enough orientations to accomodate for a "row by row" nav bar */
+
+    .project-group-title {
+        scroll-margin-top: 34rem;
+        scroll-snap-margin-top: 34rem;
+    }
+}

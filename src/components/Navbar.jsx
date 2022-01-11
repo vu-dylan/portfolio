@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react'
+import { React, useState } from 'react'
 // Import font awesome icons. Follow these instructions: https://fontawesome.com/how-to-use/on-the-web/using-with/react
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -28,7 +28,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className={`${styles.navbar} ${responsiveClass}`} id="navbar">
+        <nav className={`${styles.navbar} ${styles[responsiveClass]}`} id="navbar">
             {/* eslint-disable-next-line */}
             <a className={styles["nav-link"]} onClick={() => scrolling('About')}><span className={styles.name}>Dylan Vu</span></a>
             {/* eslint-disable-next-line */}
@@ -60,7 +60,7 @@ const Navbar = () => {
                     className={styles.icon}
                 />
             </a>
-            <div className={`${styles.hamburger} ${responsiveClass}`} id="hamburger" onClick={() => toggleBurger()}>
+            <div className={`${styles.hamburger} ${styles[responsiveClass]}`} id="hamburger" onClick={() => toggleBurger()}>
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
                 <span className={styles.line}></span>
