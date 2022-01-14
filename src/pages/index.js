@@ -50,7 +50,7 @@ export default function Home() {
       <meta name="google-site-verification" content="sUS_xDwTE-3CQEL_hjTnmk-DzsGo1-3mEprUz09L84Y" />
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
       <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-      <title>Dylan Vu | Website Portfolio | NodeJS, Python</title>
+      <title>Dylan Vu | Website Portfolio | TypeScript, NodeJS, Python</title>
     </Head>
     <Header/>
     <Navbar />
