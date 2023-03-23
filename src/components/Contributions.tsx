@@ -146,7 +146,7 @@ const Contributions = () => {
                 <div>
                     Maybe you&apos;ll find even better something here?
                 </div>
-                <div>
+                <div className={styles.githubBox}>
                     <a href="https://github.com/vu-dylan" target="_blank" rel="noreferrer" style={{ color: "#f2f2f2" }}>
                         <FontAwesomeIcon
                             icon={faGithub}
