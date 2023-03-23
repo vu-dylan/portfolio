@@ -1,4 +1,5 @@
-import { React, useEffect, useState } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../styles/ProjectContent.module.css';
 
 /* Props:
@@ -8,9 +9,9 @@ textPath = the path of the text description of the content relative to the publi
     Example of valid text path prop: "/projectgroup/javascript/discordqotd/discordqotd.txt"
 */
 
-const ProjectContent = (props) => {
+const ProjectContent = (props: { id: string, color: string, hook: string, title: string, textPath: string }) => {
 
-    const [paragraphs, setParagraphs] = useState([])
+    const [paragraphs, setParagraphs] = useState<string[]>([])
 
 
     useEffect(() => {
@@ -21,6 +22,8 @@ const ProjectContent = (props) => {
                 .then(r => r.text())
                 .then(text => {
                     setParagraphs(text.split("\n"))
+                }).catch(e => {
+                    console.error(e);
                 })
 
         }
@@ -28,7 +31,7 @@ const ProjectContent = (props) => {
         // eslint-disable-next-line
     }, [])
 
-    function checkIfphoto(text) {
+    function checkIfphoto(text: string) {
         // The photo refereced in the txt file is a path that's uploaded in the public folder
         // Add more file extensions if needed
         let validImageExtension = ['.jpg', '.png', '.jpeg', '.svg', '.webp']
@@ -40,7 +43,7 @@ const ProjectContent = (props) => {
         return false;
     }
 
-    function CheckIfLink(text) {
+    function CheckIfLink(text: string) {
         if (text.includes("github.com/") || text.includes("devpost.com/software") || text.includes("https://")) {
             return true;
         } else {
@@ -52,20 +55,24 @@ const ProjectContent = (props) => {
         <div className={styles["project-content"]}>
             <h4 style={{ color: `${props.color}` }}> {props.hook}: </h4>
             <h3 style={{ color: `${props.color}` }}> {props.title} </h3>
-            {paragraphs.map((paragraph) => {
+            {paragraphs.map((paragraph, index) => {
                 //console.log(paragraph);
                 if (checkIfphoto(paragraph)) {
                     //console.log("Hi there");
-                    return <img className={styles.image} key={paragraph} src={paragraph} alt={paragraph} />
+                    return <img className={styles.image} key={props.title + index.toString()} src={paragraph} alt={paragraph} />
                 } else if (CheckIfLink(paragraph)) {
-                    return <p key={paragraph} className={styles.text}><a className={styles["collapsible-link"]} href={paragraph} target="_blank" rel="noreferrer">{paragraph}</a></p>
+                    return <p key={props.title + index.toString()} className={styles.text}>
+                        <a className={styles["collapsible-link"]} href={paragraph} target="_blank" rel="noreferrer">
+                            {paragraph}
+                        </a>
+                    </p>
                 } else {
                     if (paragraph[0] === "*") {
-                        return <ul>
-                            <li key={paragraph}>{paragraph.slice(2)}</li>
+                        return <ul key={props.title + index.toString()}>
+                            <li >{paragraph.slice(2)}</li>
                         </ul>
                     }
-                    return <p className={styles.text} key={paragraph + Math.floor(Math.random() * 500 * Math.floor(Math.random() * 500)).toString()}>{paragraph}</p>
+                    return <p className={styles.text} key={props.title + index.toString() }>{paragraph}</p>
                 }
 
             }

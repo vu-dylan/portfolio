@@ -1,4 +1,5 @@
-import { React, useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 // Import font awesome icons. Follow these instructions: https://fontawesome.com/how-to-use/on-the-web/using-with/react
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -11,11 +12,16 @@ import styles from '../styles/Navbar.module.css'
 //I'm a bit lazy to fix this because it would involve fixing the css styling and this works as it is
 const Navbar = () => {
     const [responsiveClass, setResponsive] = useState("inactive");
-    function scrolling(id) {
+    function scrolling(id: string) {
         if (responsiveClass === "is-responsive") {
             setResponsive('inactive');
         }
-        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        let scrollable = document.getElementById(id)
+        if (scrollable) {
+            scrollable.scrollIntoView({ behavior: "smooth" });
+        } else {
+            console.error(`could not find scrollable with id ${id}`)
+        }
     }
 
     function toggleBurger() {

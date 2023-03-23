@@ -1,8 +1,10 @@
-import {React, useState, useEffect} from 'react';
+import React from "react";
+import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import styles from '../styles/Contributions.module.css';
+import { Repo } from "../../interfaces/repo";
 
 const Contributions = () => {
 
@@ -21,7 +23,7 @@ const Contributions = () => {
             params: {per_page: 70}
         }).then((res) => {
             // console.log(res.data);
-            let allPush = [];
+            let allPush: Repo[] = [];
             let first = true;
 
             // Iterate through all events and get only push events to display
@@ -35,7 +37,7 @@ const Contributions = () => {
                         let nameArr = name.split("-");
                         let i = 0;
                         name = "";
-                        nameArr.forEach((namePart) => {
+                        nameArr.forEach((namePart: string) => {
                             if (i) {
                                 name = namePart
                             } else {
@@ -79,7 +81,7 @@ const Contributions = () => {
         }
     }, [allRepos]);
 
-    function Type(text) {
+    function Type(text: string) {
 		let currText = text[0];
 		let i = 0;
 		// Animate "typing"
@@ -99,7 +101,7 @@ const Contributions = () => {
 		}, 600);
     }
 
-    function DeleteText(text) {
+    function DeleteText(text: string) {
         let i = text.length;
         // Animate "deletion"
         setTimeout(() => {
