@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import styles from '../styles/Header.module.css'
+import styles from '../styles/components/Header.module.css'
 
 const Header = () => {
 	const [introText, setIntrotext] = useState("");

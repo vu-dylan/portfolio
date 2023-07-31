@@ -6,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-import styles from '../styles/Navbar.module.css'
+import styles from '../styles/components/Navbar.module.css'
 
 // The eslint-disable-next-line is necessary because these are <a> and not <button> so tons of warnings pop up.
 //I'm a bit lazy to fix this because it would involve fixing the css styling and this works as it is

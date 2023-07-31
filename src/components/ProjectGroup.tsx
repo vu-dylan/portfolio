@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectContent from './ProjectContent'
-import styles from '../styles/ProjectGroup.module.css'
+import styles from '../styles/components/ProjectGroup.module.css'
 import Project from '../classes/project'
 
 /* Props

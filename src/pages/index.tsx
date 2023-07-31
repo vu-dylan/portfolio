@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../styles/Main.module.css'
+import styles from '../styles/pages/index.module.css'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import Header from "../components/Header";

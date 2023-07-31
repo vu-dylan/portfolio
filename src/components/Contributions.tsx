@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import styles from '../styles/Contributions.module.css';
+import styles from '../styles/components/Contributions.module.css';
 import { Repo } from "../../interfaces/repo";
 
 const Contributions = () => {

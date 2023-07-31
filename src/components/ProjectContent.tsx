@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import styles from '../styles/ProjectContent.module.css';
+import styles from '../styles/components/ProjectContent.module.css';
 
 /* Props:
 title = title of the project
