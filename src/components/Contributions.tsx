@@ -22,7 +22,6 @@ const Contributions = () => {
         Axios.get("https://api.github.com/users/vu-dylan/events/public" + '?nocache=' + new Date().getTime(), {
             params: {per_page: 70}
         }).then((res) => {
-            // console.log(res.data);
             let allPush: Repo[] = [];
             let first = true;
 
@@ -52,7 +51,8 @@ const Contributions = () => {
                         setContrib(name);
                         setRepolink("https://github.com/" + res.data[i].repo.name);
                     }
-                    allPush.push({name: name, url: "https://github.com/" + res.data[i].repo.name})
+                    const newPushRepo = { name: name, url: "https://github.com/" + res.data[i].repo.name };
+                    allPush.push(newPushRepo)
                 }
             }
             // If there is literally no push events, just show the last thing I did.
@@ -133,32 +133,36 @@ const Contributions = () => {
             <div>Thanks for stopping by! Come learn more about my projects and I!</div> :
             <div>
             The last thing I&apos;ve worked on was <span><a href={repoLink} target="_blank" rel="noreferrer">{contribution}</a></span>! Check it out!
-            </div>}
-            {allRepos[0].name === "" || allRepos[0].url === "" || contribution === "" ? 
+                </div>}
+            <div>
+                Think that&apos;s pretty cool? Or maybe it wasn&apos;t your cup of tea?
+            </div>
+
+            <div>
+                Maybe you&apos;ll find even better something here?
+            </div>
+            <div className={styles.githubBox}>
+                <a href="https://github.com/vu-dylan" target="_blank" rel="noreferrer" style={{ color: "#f2f2f2" }}>
+                    <FontAwesomeIcon
+                        icon={faGithub}
+                        id="github"
+                        className={styles.githubIcon}
+                    />
+                </a>
+            </div>
+
+
+            {!allRepos[0] || allRepos[0].name === "" || allRepos[0].url === "" || contribution === "" ? 
             null : 
             <div>
-                <div>
-                    Think that&apos;s pretty cool? Or maybe it wasn&apos;t your cup of tea?
-                </div>
+
                 <div>
                     What about <span><a href={allRepos[index].url} target="_blank" rel="noreferrer">{backupRepo}</a></span>?
                 </div>
-                <div>
-                    Maybe you&apos;ll find even better something here?
-                </div>
-                <div className={styles.githubBox}>
-                    <a href="https://github.com/vu-dylan" target="_blank" rel="noreferrer" style={{ color: "#f2f2f2" }}>
-                        <FontAwesomeIcon
-                            icon={faGithub}
-                            id="github"
-                            className={styles.githubIcon}
-                        />
-                    </a>
-                </div>
-                <div>
-                    Or just keep scrolling to find out!
-                </div>
-            </div>}
+                </div>}
+            <div>
+                Or just keep scrolling to find out!
+            </div>
         </div>
     )
 }
